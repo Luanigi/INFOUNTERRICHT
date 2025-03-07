@@ -7,7 +7,7 @@ Themen und mögliche Übungsaufgaben für die Klausur
 - Arrays definieren, duplizieren, und mit schleifen durchlaufen
 - Arbeitsblatt 6 (if else while for)
 - keine multidimensionale und objekt arrays
-- mithilfe von lianren funktionen positionieren vgl. billiard kugel
+- mithilfe von lianren funktionen positionieren vgl. ** Pyramide
 
 KONZEPTE
 if
@@ -16,3 +16,5 @@ while
 variablen
 get mthd
 set mthd
+for
+objekte
