@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Buch
+comment0.text=\r\n\ @author\ Luan\r\n\ @version\ 1.0.0\r\n
+comment1.params=titel\ autor\ isbn\ jahr
+comment1.target=Buch(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ getTitel()
+comment3.params=
+comment3.target=java.lang.String\ getAutor()
+comment4.params=
+comment4.target=java.lang.String\ getIsbn()
+comment5.params=
+comment5.target=int\ getJahr()
+comment6.params=titel
+comment6.target=void\ setTitel(java.lang.String)
+comment7.params=autor
+comment7.target=void\ setAutor(java.lang.String)
+comment8.params=isbn
+comment8.target=void\ setIsbn(java.lang.String)
+comment9.params=jahr
+comment9.target=void\ setJahr(int)
+numComments=10
