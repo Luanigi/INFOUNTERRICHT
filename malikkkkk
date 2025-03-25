@@ -1,0 +1,96 @@
+public class Monitor {
+    private String marke;
+    private String modell;
+    private double preis; // in Euro
+    private int groesse; // in Zoll
+    private int aufloesungBreite; // z. B. 1920 für Full HD
+    private int aufloesungHoehe;  // z. B. 1080 für Full HD
+    private int refreshRate; // in Hz (FPS)
+
+    // Konstruktor
+    public Monitor(String marke, String modell, double preis, int groesse, int aufloesungBreite, int aufloesungHoehe, int refreshRate) {
+        this.marke = marke;
+        this.modell = modell;
+        this.preis = preis;
+        this.groesse = groesse;
+        this.aufloesungBreite = aufloesungBreite;
+        this.aufloesungHoehe = aufloesungHoehe;
+        this.refreshRate = refreshRate;
+    }
+
+    // Getter-Methoden
+    public String getMarke() {
+        return marke;
+    }
+
+    public String getModell() {
+        return modell;
+    }
+
+    public double getPreis() {
+        return preis;
+    }
+
+    public int getGroesse() {
+        return groesse;
+    }
+
+    public int getAufloesungBreite() {
+        return aufloesungBreite;
+    }
+
+    public int getAufloesungHoehe() {
+        return aufloesungHoehe;
+    }
+
+    public int getRefreshRate() {
+        return refreshRate;
+    }
+
+    // Setter-Methode für den Preis (falls man ihn anpassen möchte)
+    public void setPreis(double preis) {
+        this.preis = preis;
+    }
+
+    // Methode zur Berechnung des FPS-zu-Preis-Verhältnisses
+    public double fpsZuPreisVerhaeltnis() {
+        return refreshRate / preis;
+    }
+
+    // Methode zur Anzeige der Monitor-Details
+    public void zeigeDetails() {
+        System.out.println("Marke: " + marke);
+        System.out.println("Modell: " + modell);
+        System.out.println("Preis: " + preis + "€");
+        System.out.println("Größe: " + groesse + " Zoll");
+        System.out.println("Auflösung: " + aufloesungBreite + "x" + aufloesungHoehe);
+        System.out.println("Refresh Rate: " + refreshRate + " Hz");
+        System.out.println("FPS-zu-Preis-Verhältnis: " + fpsZuPreisVerhaeltnis() + " FPS/€");
+        System.out.println("--------------------------");
+    }
+
+    // Statische Methode zur Berechnung des durchschnittlichen FPS-zu-Preis-Verhältnisses
+    public static double durchschnittlichesVerhaeltnis(Monitor[] monitore) {
+        double summe = 0;
+        for (Monitor m : monitore) {
+            summe += m.fpsZuPreisVerhaeltnis();
+        }
+        return summe / monitore.length;
+    }
+
+    // Main-Methode zum Testen der Klasse
+    public static void main(String[] args) {
+        Monitor m1 = new Monitor("Samsung", "Odyssey G7", 600, 27, 2560, 1440, 240);
+        Monitor m2 = new Monitor("LG", "UltraGear 32", 500, 32, 2560, 1440, 165);
+        Monitor m3 = new Monitor("Asus", "ROG Swift", 1200, 27, 3840, 2160, 144);
+
+        Monitor[] monitore = {m1, m2, m3};
+
+        System.out.println("Monitor-Details:");
+        for (Monitor m : monitore) {
+            m.zeigeDetails();
+        }
+
+        System.out.println("Durchschnittliches FPS-zu-Preis-Verhältnis: " + durchschnittlichesVerhaeltnis(monitore) + " FPS/€");
+    }
+}
