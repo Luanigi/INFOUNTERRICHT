@@ -1,0 +1,95 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Monitor {
+    private String marke;
+    private String modell;
+    private double preis;
+    private int groesse;
+    private int aufloesungBreite;
+    private int aufloesungHoehe;
+    private int refreshRate;
+
+    public Monitor(String marke, String modell, double preis, int groesse, int aufloesungBreite, int aufloesungHoehe, int refreshRate) {
+        this.marke = marke;
+        this.modell = modell;
+        this.preis = preis;
+        this.groesse = groesse;
+        this.aufloesungBreite = aufloesungBreite;
+        this.aufloesungHoehe = aufloesungHoehe;
+        this.refreshRate = refreshRate;
+    }
+
+    public String getMarke() {
+        return marke;
+    }
+
+    public String getModell() {
+        return modell;
+    }
+
+    public double getPreis() {
+        return preis;
+    }
+
+    public int getAufloesungBreite() {
+        return aufloesungBreite;
+    }
+
+    public int getAufloesungHoehe() {
+        return aufloesungHoehe;
+    }
+
+    public int getRefreshRate() {
+        return refreshRate;
+    }
+
+    public double fpsZuPreisVerhaeltnis() {
+        return refreshRate / preis;
+    }
+
+    public int gesamtPixel() {
+        return aufloesungBreite * aufloesungHoehe;
+    }
+
+    public void zeigeDetails() {
+        System.out.println("Marke: " + marke);
+        System.out.println("Modell: " + modell);
+        System.out.println("Preis: " + preis + "€");
+        System.out.println("Auflösung: " + aufloesungBreite + "x" + aufloesungHoehe);
+        System.out.println("Refresh Rate: " + refreshRate + " Hz");
+        System.out.println("FPS-zu-Preis-Verhältnis: " + fpsZuPreisVerhaeltnis() + " FPS/€");
+        System.out.println("Gesamtpixel: " + gesamtPixel());
+        System.out.println("--------------------------");
+    }
+
+    public static void main(String[] args) {
+        Monitor m1 = new Monitor("Samsung", "Odyssey G7", 600, 27, 2560, 1440, 240);
+        Monitor m2 = new Monitor("LG", "UltraGear 32", 500, 32, 2560, 1440, 165);
+        Monitor m3 = new Monitor("Asus", "ROG Swift", 1200, 27, 3840, 2160, 144);
+        Monitor m4 = new Monitor("Belinea", "Pro PC Monitor", 300, 24, 1920, 1080, 144);
+
+        Monitor[] monitore = {m1, m2, m3, m4};
+
+        System.out.println("Monitor-Details:");
+        for (Monitor m : monitore) {
+            m.zeigeDetails();
+        }
+
+        Monitor besterMonitor = Arrays.stream(monitore)
+                .max(Comparator.comparingDouble(Monitor::fpsZuPreisVerhaeltnis))
+                .orElse(monitore[0]);
+
+        Arrays.sort(monitore, Comparator.comparingDouble(Monitor::fpsZuPreisVerhaeltnis).reversed());
+
+        System.out.println("Rangliste der Monitore basierend auf FPS-zu-Preis-Verhältnis:");
+        for (int i = 0; i < monitore.length; i++) {
+            System.out.println((i + 1) + ". " + monitore[i].getMarke() + " " + monitore[i].getModell() +
+                    " mit " + monitore[i].fpsZuPreisVerhaeltnis() + " FPS/€");
+        }
+
+        System.out.println("\nDer beste Monitor in der Gesamtbewertung ist:");
+        System.out.println(besterMonitor.getMarke() + " " + besterMonitor.getModell() +
+                " mit einem FPS/€ Verhältnis von " + besterMonitor.fpsZuPreisVerhaeltnis());
+    }
+}
