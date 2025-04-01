@@ -16,7 +16,7 @@ public class Startklasse {
     public void ausgeben() {
         System.out.println(" ");
         for(int i=0; i<bücher.length; i++) {
-            System.out.println(bücher[i].getElektrisch());
+            System.out.println(bücher[i].getTitel());
         }
     }
 }

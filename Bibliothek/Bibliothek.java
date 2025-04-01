@@ -1,24 +1,34 @@
-// Bibliothek.java - Die Klasse, die die Bibliothek verwaltet und ein Buch hinzufügt.
 import java.util.ArrayList;
 import java.util.List;
 
 public class Bibliothek {
     Buch Die_Verwandlung;
-
+    List<String> Buchlist = new ArrayList<>();
+    
     // Konstruktor
     public Bibliothek() {
-        Die_Verwandlung = new Buch("Die Verwandlung", "Franz Kafka");
+        Die_Verwandlung = new Buch("Die Verwandlung", "Franz Kafka", "123456", 2025);
     }
 
-    // Methode, um ein Buch hinzuzufügen
-    public void hinzufuegenBuch(Buch buch) {
-        buchList.add(buch);
+    // Buch hinzuzufügen
+    public void buchHinzufuegen(Buch buch) {
+        Buchlist.add(buch.getTitel());
+        Buchlist.add(buch.getAutor());
+        Buchlist.add(buch.getIsbn());
+        Buchlist.add(String.valueOf(buch.getJahr()));
+    }
+    
+    // Buch entfernen
+    public void buchEntfernen(int index) {
+        Buchlist.add(index, null);
+        System.out.println("Das sind die aktuellen Bücher: ");
+        alleBuecherAnzeigen();
     }
 
-    // Methode, um alle Bücher der Bibliothek anzuzeigen
+    // alle Bücher der Bibliothek anzeigen
     public void alleBuecherAnzeigen() {
-        for (Buch buch : buchList) {
-            System.out.println(buch);
+        for (int i = 0; i < Buchlist.size(); i++) {
+            System.out.println(Buchlist.get(i));
         }
     }
 }

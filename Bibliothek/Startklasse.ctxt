@@ -1,5 +1,8 @@
 #BlueJ class context
 comment0.target=Startklasse
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment0.text=\r\n\ @author\ Luan\r\n\ @version\ 1.0.0\r\n
+comment1.params=
+comment1.target=Startklasse()
+comment2.params=
+comment2.target=void\ ausgeben()
+numComments=3
