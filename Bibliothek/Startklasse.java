@@ -4,19 +4,18 @@
  */
 
 public class Startklasse {
-    Buch [] bücher = new Buch[1];
     
     public Startklasse() {
-        Buch buch1 = new Buch("Die Verwandlung", "Franz Kafka", "1234567890", 1915);
-        Buch buch2 = new Buch("1984", "George Orwell", "0987654321", 1949);
-        bücher[0]=buch1;
-        bücher[1]=buch2;
+        new Bibliothek(new Buch[] {
+            new Buch("1984", "George Orwell", "123456789", 1949),
+            new Buch("Der Prozess", "Franz Kafka", "987654321", 1925)
+        });
     }
      
     public void ausgeben() {
         System.out.println(" ");
-        for(int i=0; i<bücher.length; i++) {
-            System.out.println(bücher[i].getTitel());
+        for(int i=0; i< Bibliothek.len; i++) { //fix this
+            System.out.println(bücher[i].getTitel()); //fix this
         }
     }
 }

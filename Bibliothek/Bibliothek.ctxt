@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Bibliothek
-comment1.params=
-comment1.target=Bibliothek()
+comment1.params=b\u00FCcher
+comment1.target=Bibliothek(Buch[])
 comment2.params=buch
 comment2.target=void\ buchHinzufuegen(Buch)
 comment3.params=index
