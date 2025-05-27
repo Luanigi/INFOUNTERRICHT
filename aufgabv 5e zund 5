@@ -1,0 +1,18 @@
+Aus einem Blatt des Formats Aₙ entsteht durch Falten ein Blatt des Formats Aₙ₊₁, indem die lange Seite halbiert wird:
+A_n+1 = halbes A_n (an der langen Seite gefaltet)
+
+A0 = 84 cm x 118,8 cm
+A1 = 84 cm x 59,4 cm
+A2 = 42 cm x 59,4 cm
+A3 = 42 cm x 29,7 cm 
+A4 = 21 cm x 29,7 cm
+
+Iterativ
+Man rechnet Schritt für Schritt: Vom Anfangswert zum nächsten, dann wieder zum nächsten – wie bei einer Kette –, bis man beim gesuchten Glied angekommen ist. 
+
+Explizit
+Hier braucht man nur die Nummer des Gliedes (z. B. das 5. oder 100. Glied), um es zu berechnen – ohne die vorherigen Glieder zu kennen. 
+
+Rekursiv
+Eine rekursive Folge ist wie ein Bauplan: Man kennt den Anfang, und jedes weitere Glied baut auf dem vorherigen auf.
+Man kann das nächste Glied nicht direkt aus der Position berechnen, sondern muss die vorherigen kennen.
