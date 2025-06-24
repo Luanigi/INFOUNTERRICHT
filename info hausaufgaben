@@ -1,0 +1,23 @@
+Der euklidische Algorithmus ist eine sehr effiziente Methode, um den ggT von zwei Zahlen zu finden. Er basiert auf der Eigenschaft, dass der ggT zweier Zahlen gleich dem ggT der kleineren Zahl und des Rests der Division der größeren durch die kleinere Zahl ist.
+In unserem Code:
+1. RechneGGT(int a, int b): Dies ist die Methode, die den ggT berechnet.
+2. while (b != 0): Die Schleife läuft so lange, wie die zweite Zahl (b) nicht null ist. Das ist das Abbruchkriterium. Sobald b null wird, haben wir den ggT gefunden.
+3. int temp = b;: Wir speichern den aktuellen Wert von b in einer temporären Variable (temp), bevor wir ihn ändern.
+4. b = a % b;: Das ist der Kern des Algorithmus. b wird durch den Rest der Division von a durch b ersetzt (a % b).
+5. a = temp;: a wird durch den alten Wert von b (der in temp gespeichert wurde) ersetzt.
+6. return a;: Wenn die Schleife endet (weil b null geworden ist), ist der Wert von a der ggT.
+
+public class ggT() {
+  public ggT(){
+    rechneGGT(2, 5);
+  }
+
+  int rechneGGT(int a, int b) {
+    while (b != 0) {
+      int temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+}
