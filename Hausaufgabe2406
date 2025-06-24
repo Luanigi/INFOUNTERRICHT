@@ -1,0 +1,17 @@
+Die rekursive Version des euklidischen Algorithmus funktioniert nach dem Prinzip der Selbstähnlichkeit. Anstatt einer Schleife, die sich wiederholt, ruft die Methode sich selbst auf, bis eine bestimmte Bedingung (der Basisfall) erfüllt ist.
+1. Basisfall (if (b == 0)): Dies ist der wichtigste Teil einer jeden rekursiven Funktion. Er definiert den Punkt, an dem die Rekursion endet. Wenn b null ist, haben wir den ggT gefunden, und dieser ist a. Die Funktion gibt a zurück und die Rekursion entfaltet sich.
+2. Rekursiver Aufruf (else { return rechneGGT(b, a % b); }): Wenn b nicht null ist, ruft sich die Funktion rechneGGT selbst auf. Dabei wird b zum neuen a und a % b (der Rest der Division) zum neuen b. Dieser Schritt entspricht genau dem, was in der Schleife der iterativen Version passiert ist. Die Funktion wiederholt diesen Aufruf immer wieder mit neuen Werten, bis der Basisfall erreicht ist.
+
+
+public class ggT() {
+  public ggT(){
+    rechneGGT(2, 5);
+  }
+
+  int rechneGGT(int a, int b) {
+   if (b == 0) { 
+      return a; 
+   } else { 
+      return rechneGGT(b, a % b);
+  }
+}
