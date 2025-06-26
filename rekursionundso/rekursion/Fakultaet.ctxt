@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Fakultaet
+comment0.text=\r\n\ fakult\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4\u00E4t\r\n\ \r\n\ @author\ Luan\ \r\n\ @version\ 1.0.0\r\n
+comment1.params=
+comment1.target=Fakultaet()
+comment2.params=n
+comment2.target=int\ rekursiv(int)
+comment3.params=n
+comment3.target=int\ iterativ(int)
+numComments=4

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=potenz
+comment0.text=\r\n\ potennnnnzzzz\r\n\ \r\n\ @author\ Luan\ \r\n\ @version\ 1.0.0\r\n
+comment1.params=
+comment1.target=potenz()
+comment2.params=basis\ exponent
+comment2.target=int\ rekursiv(int,\ int)
+comment3.params=basis\ exponent
+comment3.target=int\ iterativ(int,\ int)
+numComments=4
