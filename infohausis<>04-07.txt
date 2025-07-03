@@ -1,0 +1,13 @@
+extends
+Mit extends kann eine Klasse die Eigenschaften und Methoden einer anderen Klasse übernehmen. 
+So entsteht eine Vererbung, bei der die neue Klasse (Unterklasse) auf der bestehenden Klasse 
+(Oberklasse) aufbaut.
+
+super
+Mit super kann man in der Unterklasse auf Dinge aus der Oberklasse zugreifen, z. B. Methoden 
+oder den Konstruktor. Das ist nützlich, wenn man etwas von der Oberklasse benutzen oder erweitern 
+will, sei es methoden oder attribute.
+
+@Override
+@Override schreibt man vor eine Methode, um zu zeigen, dass man eine Methode aus der Oberklasse 
+neu definiert. So wird die alte Version durch eine eigene Version in der Unterklasse ersetzt.
